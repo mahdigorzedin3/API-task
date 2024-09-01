@@ -46,14 +46,7 @@ var dotenv = require("dotenv");
 var cors = require("cors");
 var client_1 = require("./prisma-bazar/node_modules/@prisma/client");
 var multer = require("multer");
-// import * as Minio from 'minio'
-// var client = new Minio.Client({
-//     endPoint: 'play.min.io',
-//     port: 9000,
-//     useSSL: true,
-//     accessKey: 'Q3AM3UQ867SPQQA43P2F',
-//     secretKey: 'zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG'
-// })
+
 var app = express();
 var prisma = new client_1.PrismaClient();
 app.use(cookieParser());
@@ -245,35 +238,7 @@ app.get('/product', login, function (req, res) { return __awaiter(void 0, void 0
         }
     });
 }); });
-//   app.get('/donedeal',login,async(req,res)=>{
-//     const donedeal=await prisma.transaction.findMany({
-//       where:{
-//         owner_id:req.session.profileid,
-//         sent:true,
-//         paid:true
-//       }
-//     })
-//     res.json(donedeal)
-//   })
-//   app.get('/donedeal',login,async(req,res)=>{
-//     const donedeal=await prisma.transaction.findMany({
-//       where:{
-//         owner_id:req.session.profileid,
-//         sent:true,
-//         paid:true
-//       }
-//     })
-//     res.json(donedeal)
-//   })
-// app.get('/newdeal',login,async(req,res)=>{
-//   const newdeal=await prisma.orders.findMany({
-//     where:{
-//       owner_id:req.session.profileid,
-//       sent:false
-//     }
-//   })
-//   res.json(newdeal)
-// })
+
 app.post("/product/add", upload.single("image"), login, function (req, res, err) { return __awaiter(void 0, void 0, void 0, function () {
     var _a, name_1, price, quantity, weight, description, tags, title, detail, min, color, adddatabase, taglist, arr, _i, taglist_1, x, addtags, tables, i, addtable, colorlist, colors, _b, colorlist_1, j, addcolors, err_1;
     var _c, _d;
